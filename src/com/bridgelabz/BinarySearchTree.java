@@ -29,7 +29,31 @@ public class BinarySearchTree
         }
         return node;
     }
-   
+    /* Functions to search for an element */
+    public boolean search(int val)
+    {
+        return search(root, val);
+    }
+    /* Function to search for an element recursively */
+    private boolean search(BSTNode r, int val)
+    {
+        boolean found = false;
+        while ((r != null) && !found)
+        {
+            int rval = r.getData();
+            if (val < rval)
+                r = r.getLeft();
+            else if (val > rval)
+                r = r.getRight();
+            else
+            {
+                found = true;
+                break;
+            }
+            found = search(r, val);
+        }
+        return found;
+    }
     
     /* Function for inorder traversal */
     public void inorder()
@@ -57,15 +81,20 @@ public class BinarySearchTree
 	       {
 	           System.out.println("\nBinary Search Tree Operations");
 	           System.out.println("1. insert ");           
-	         
+	           System.out.println("2. search");
 	           int choice = scan.nextInt();            
 	           switch (choice)
 	           {
 	           case 1 : 
 	               System.out.println("Enter integer element to insert");
 	               bst.insert( scan.nextInt() );                     
-	               break;                                       
-	                                                                       
+	               break; 
+	               
+	           case 2 : 
+	               System.out.println("Enter integer element to search");
+	               System.out.println("Search result : "+ bst.search( scan.nextInt() ));
+	               break;
+	               
 	           default : 
 	               System.out.println("Wrong Entry \n ");
 	               break;   
