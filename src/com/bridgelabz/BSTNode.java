@@ -3,8 +3,6 @@ public class BSTNode
 {
     BSTNode left, right;
     int data;
-
-   
     /* Constructor */
     public BSTNode(int n)
     {

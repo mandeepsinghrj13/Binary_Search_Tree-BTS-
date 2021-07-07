@@ -56,8 +56,7 @@ public class BinarySearchTree
 	       do    
 	       {
 	           System.out.println("\nBinary Search Tree Operations");
-	           System.out.println("1. insert ");
-	           
+	           System.out.println("1. insert ");           
 	         
 	           int choice = scan.nextInt();            
 	           switch (choice)
@@ -65,10 +64,8 @@ public class BinarySearchTree
 	           case 1 : 
 	               System.out.println("Enter integer element to insert");
 	               bst.insert( scan.nextInt() );                     
-	               break;                          
-	                                 
-	                                                     
-	                       
+	               break;                                       
+	                                                                       
 	           default : 
 	               System.out.println("Wrong Entry \n ");
 	               break;   
